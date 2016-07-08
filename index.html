@@ -17,9 +17,15 @@
 
 		<div class="col-sm-3 no-print" id="left">
 
-			<h3 class="text-center">Template settings</h3>
 			<div id="panel">
 
+				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">Usage</button>
+				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
+				<hr>
+
+				<h3 class="text-center">Template settings</h3>
+				<button id="defaultTemplateBtn" class="btn btn-block btn-danger" onclick="template('default');">Use official IITG template</button>
+				<button id="customTemplateBtn" class="btn btn-block btn-default" onclick="template('custom');">Use custom template</button>
 				<h5>
 					Minor
 					<div class="toggle-button">
@@ -35,86 +41,111 @@
 						<div class="toggle-option" data-toggle="contact" id="contact5">5</div>
 					</div>
 				</h5>
-				<hr>
+				<h5>
+					Horizontal margin
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="margin" id="margin1">1</div>
+						<div class="toggle-option" data-toggle="margin" id="margin2">2</div>
+						<div class="toggle-option" data-toggle="margin" id="margin3">3</div>
+						<div class="toggle-option" data-toggle="margin" id="margin4">4</div>
+						<div class="toggle-option" data-toggle="margin" id="margin5">5</div>
+						<div class="toggle-option" data-toggle="margin" id="margin6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Center column no.
+					<div class="toggle-button">
+						<div class="toggle-option multi-select" data-toggle="column" id="column1">1</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column2">2</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column3">3</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
+					</div>
+				</h5>
+				<br>
+				<!-- <hr> -->
 
-				<h4>Current IITG template follows first option of each of following settings:</h4>
-				<br>
-				<h5>
-					Font type
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="font" id="fontSerif">Serif</div>
-						<div class="toggle-option" data-toggle="font" id="fontSans">Sans</div>
-					</div>
-				</h5>
-				<h5>
-					Title case
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="case" id="caseNormal">Default</div>
-						<div class="toggle-option" data-toggle="case" id="caseUpper">Uppercase</div>
-					</div>
-				</h5>
-				<h5>
-					Title style
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="title" id="titleRuled">Ruled</div>
-						<div class="toggle-option" data-toggle="title" id="titleShaded">Shaded</div>
-					</div>
-				</h5>
-				<h5>
-					Title rule position
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="rule" id="ruleAbove">Above title</div>
-						<div class="toggle-option" data-toggle="rule" id="ruleBelow">Below title</div>
-					</div>
-				</h5>
-				<br>
-				<h5>
-					Image
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="image" id="imageShow">Show</div>
-						<div class="toggle-option" data-toggle="image" id="imageHide">Hide</div>
-					</div>
-				</h5>
-				<h5>
-					Roll No
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="roll" id="rollShow">Show</div>
-						<div class="toggle-option" data-toggle="roll" id="rollHide">Hide</div>
-					</div>
-				</h5>
-				<h5>
-					Table border
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="table" id="tableShow">Show</div>
-						<div class="toggle-option" data-toggle="table" id="tableHide">Hide</div>
-					</div>
-				</h5>
-				<h5>
-					Education year column
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="edyear" id="edyearFirst">First</div>
-						<div class="toggle-option" data-toggle="edyear" id="edyearLat">Last</div>
-					</div>
-				</h5>
-				<h5>
-					Experience layout
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="experience" id="experience1">L1</div>
-						<div class="toggle-option" data-toggle="experience" id="experience2">L2</div>
-					</div>
-				</h5>
-				<h5>
-					Projects layout
-					<div class="toggle-button">
-						<div class="toggle-option" data-toggle="projects" id="projects1">L1</div>
-						<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
-					</div>
-				</h5>
-				<hr>
 				
-				<h5>Use Chrome to print the page properly</h5>
-				<h5>Adjust margins if needed while printing</h5>
-				<button class="btn btn-block btn-primary" onclick="window.print()">PRINT AS PDF</button>
+				<div id="customTemplateOptions">
+					<h5>
+						Font type
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="font" id="fontDroid">Droid</div>
+							<div class="toggle-option" data-toggle="font" id="fontRoboto">Roboto</div>
+							<div class="toggle-option" data-toggle="font" id="fontVerdana">Verdana</div>
+						</div>
+					</h5>
+					<h5>
+						Title case
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="case" id="caseNormal">Default</div>
+							<div class="toggle-option" data-toggle="case" id="caseUpper">Uppercase</div>
+						</div>
+					</h5>
+					<h5>
+						Title style
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="title" id="titleRuled">Ruled</div>
+							<div class="toggle-option" data-toggle="title" id="titleShaded">Shaded</div>
+						</div>
+					</h5>
+					<h5>
+						Title rule position
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="rule" id="ruleAbove">Above title</div>
+							<div class="toggle-option" data-toggle="rule" id="ruleBelow">Below title</div>
+						</div>
+					</h5>
+					<br>
+					<h5>
+						Image
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="image" id="imageShow">Show</div>
+							<div class="toggle-option" data-toggle="image" id="imageHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Roll No
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="roll" id="rollShow">Show</div>
+							<div class="toggle-option" data-toggle="roll" id="rollHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Course
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="course" id="course1">1 line</div>
+							<div class="toggle-option" data-toggle="course" id="course2">2 lines</div>
+						</div>
+					</h5>
+					<h5>
+						Table border
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="table" id="tableShow">Show</div>
+							<div class="toggle-option" data-toggle="table" id="tableHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Education year column
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="edyear" id="edyearFirst">First</div>
+							<div class="toggle-option" data-toggle="edyear" id="edyearLat">Last</div>
+						</div>
+					</h5>
+					<h5>
+						Experience layout
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="experience" id="experience1">L1</div>
+							<div class="toggle-option" data-toggle="experience" id="experience2">L2</div>
+						</div>
+					</h5>
+					<h5>
+						Projects layout
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="projects" id="projects1">L1</div>
+							<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
+						</div>
+					</h5>
+				</div>
 
 			</div>
 
@@ -125,15 +156,16 @@
 
 			<div id="page">
 
-				<div class="row" style="margin-bottom:20px;">
+				<div class="row" style="margin-bottom:10px;">
 				<div class="col-sm-12">
 					<div style="display:inline-block;" id="image_box">
 						<img src="images/iitg_logo.png" height="80" width="80">
 					</div>
 					<div id="info" style="display:inline-block;">
 						<h2 id="contentName">Student Name</h2>
-						<h5 id="contentRoll"><strong>Roll Number :</strong> 14010XXXX</h5>
+						<h5 id="contentRoll">Roll Number : 14010XXXX</h5>
 						<h5 id="contentCourse">B.Tech - XXX Engineering</h5>
+						<h5 id="contentBranch">XXX Engineering</h5>
 						<h5 id="contentMinor">Minor in XXX</h5>
 						<h5 id="contentCollege">Indian Institute of Technology Guwahati</h5>
 					</div>
@@ -171,20 +203,21 @@
 							</tr>
 							<tr>
 								<td>2014</td>
-								<td>Senior secondary - CBSE</td>
-								<td>XYZ Public School, New Delhi</td>
+								<td>Senior secondary</td>
+								<td>CBSE board</td>
 								<td>97.0%</td>
 							</tr>
 							<tr>
 								<td>2012</td>
-								<td>Secondary - CBSE</td>
-								<td>ABC Public School, New Delhi</td>
+								<td>Secondary</td>
+								<td>CBSE board</td>
 								<td>10.0</td>
 							</tr>
 						</table>
 					</li>
 					</ul>
 				</div>
+
 
 				<div class="section" id="sectionExperience">
 					<div class="section-title">
@@ -196,21 +229,50 @@
 					<li>
 						<div>	
 						<div class="title">XYZ Engineer at 'ABC'</div>
-						<div class="time">May'16 - Jul'16</div>
+						<div class="time right">May 2016 - July 2016</div>
 						</div>
 						<div>
 						<div class="link right">www.abc.in</div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Analysed app usage statistics to recommend items based on user's preference.</div>
 						</div>
 					</li>
 					<li>
 						<div>	
 						<div class="title">XYZ Engineer at 'ABC'</div>
-						<div class="time">Dec'15</div>
+						<div class="time right">Dec 2015</div>
 						</div>
 						<div>
 						<div class="link right">www.abc.in</div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Designed methods to improve the existing unit test mechanism.</div>
+						</div>
+					</li>
+					</ul>
+				</div>
+
+
+				<div class="section" id="sectionPublications">
+					<div class="section-title">
+						<hr class="hr-above">
+						<h4><strong>Publications</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<div>	
+						<div class="title">Advanced analysis of damping motion</div>
+						<div class="time right">PCES 2010</div>
+						</div>
+						<div>
+						<div class="mentor">Mentors</div>
+						</div>
+					</li>
+					<li>
+						<div>	
+						<div class="title">Efficient ranking of search results</div>
+						<div class="time right">LOCS 2010</div>
+						</div>
+						<div>
+						<div class="mentor">Mentors</div>
 						</div>
 					</li>
 					</ul>
@@ -227,73 +289,73 @@
 					<li>
 						<div>		
 						<div class="title">Project title</div>
-						<div class="time">Ongoing</div>
+						<div class="time right">Ongoing</div>
 						</div>
 						<div>
 						<div class="mentor tab">Project Mentor</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					<li>
 						<div>
 						<div class="title">Project title</div>
-						<div class="time">Apr'16</div>
+						<div class="time right">Apr 2016</div>
 						</div>
 						<div>
 						<div class="mentor tab">Dr. XYZ, Associate Professor, Dept. of XXX, IIT Guwahati</div>
 						<div class="link right">goo.gl/link</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					<li>
 						<div>		
 						<div class="title">Project title</div>
-						<div class="time">Jan'16 - Mar'16</div>
+						<div class="time right">Jan 2016 - Mar 2016</div>
 						</div>
 						<div>
 						<div class="mentor tab">Mentor name</div>
 						<div class="link right">www.xyz.in</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					<li>
 						<div>		
 						<div class="title">Project title</div>
-						<div class="time">Feb'16</div>
+						<div class="time right">Feb 2016</div>
 						</div>
 						<div>
 						<div class="link right">goo.gl/link</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					<li>
 						<div>		
 						<div class="title">Project title</div>
-						<div class="time">Nov'15</div>
+						<div class="time right">Nov 2015</div>
 						</div>
 						<div>
 						<div class="mentor tab">Mentor name</div>
 						<div class="link right">github.com/link</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					<li>
 						<div>		
 						<div class="title">Project title</div>
-						<div class="time">Aug'15 - Sep'15</div>
+						<div class="time right">Aug 2015 - Sep 2015</div>
 						</div>
 						<div>
-						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
 						</div>
 					</li>
 					</ul>
@@ -332,33 +394,6 @@
 				</div>
 
 
-				<div class="section" id="sectionAchievements">
-					<div class="section-title">
-						<hr class="hr-above">
-						<h4><strong>Achievements</strong></h4>
-						<hr class="hr-below">
-					</div>
-					<ul>
-					<li>
-						<span class="title">ABC contest 2016 : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
-					</li>
-					<li>
-						<span class="title">Joint Entrance Examination 2014 : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
-					</li>
-					<li>
-						<span class="title">KVPY 2013-14 : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
-					</li>
-					<li>
-						<span class="title">ABC Olympiad 2014 : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
-					</li>
-					</ul>
-				</div>
-
-
 				<div class="section" id="sectionResponsibility">
 					<div class="section-title">
 						<hr class="hr-above">
@@ -371,21 +406,48 @@
 					</ul>
 				</div>
 
+
+				<div class="section" id="sectionAchievements">
+					<div class="section-title">
+						<hr class="hr-above">
+						<h4><strong>Achievements</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<span class="title">ABC contest 2016 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					<li>
+						<span class="title">Joint Entrance Examination 2014 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					<li>
+						<span class="title">KVPY 2013-14 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					<li>
+						<span class="title">ABC Olympiad 2014 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					</ul>
+				</div>
+
 			
 				<div class="section" id="sectionCurricular">
 					<div class="section-title">
 						<hr class="hr-above">
-						<h4><strong>Extra-curricular activities</strong></h4>
+						<h4><strong>Extra curriculars</strong></h4>
 						<hr class="hr-below">
 					</div>
 					<ul>
 					<li>
 						<span class="title">ABC workshop : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
+						<span class="text">Attended a 3-day workshop on Image sensing satellute development.</span>
 					</li>
 					<li>
 						<span class="title">ABC contest 2016 : </span>
-						<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi, molestiae quis.</span>
+						<span class="text">Secured 1st position in the National level contest.</span>
 					</li>
 					</ul>
 				</div>
@@ -403,15 +465,11 @@
 							<li>Computer lab</li>
 							<li>Process design</li>
 							<li>Statistics *</li>
-							<li>ABC Theory *</li>
-							<li>XYZ Software lab *</li>
 						</div>
 						<div class="col-sm-6">
 							<li>Advanced calculus</li>
-							<li>ABC process lab</li>
 							<li>XYZ architecture *</li>
 							<li>ABC lab *</li>
-							<li>XYZ lab *</li>
 						</div>
 					</div>
 					<div class="star"><i>*<span class="light"> To be completed in Nov 2016</span></i></div>
@@ -446,10 +504,42 @@
 
 	</div>
 
-
 </div>
 
+
+<div class="modal fade" id="usageModal" tabindex='-1'>
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Editing content</h4>
+				<ul>
+					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
+					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method.</li>
+					<li>To insert bold/italics/formatted text, copy a part of already existing formatted text to where you want and edit it. (Just like we can do in text editors)</li>
+				</ul>
+				<h4>Editing template</h4>
+				<ul>
+					<li>Use the options in the left panel to modify the template</li>
+					<li>In case you want to use a different template than the official IITG template, choose the corresponding button to see other setting options. (For on-campus purpose, you must use official IITG template)</li>
+				</ul>
+				<h4>Saving as PDF</h4>
+				<ul>
+					<li><strong>Note : </strong>Use Google Chrome to print as PDF. (Other browsers are unable to print properly)</li>
+					<li>Adjust margin in the print dialog box. You may need it if a section is getting split between two pages. Print each page separately with different margins if needed.</li>
+					<li>If URLs or some stray text is being shown in print preview, disable the options "Include headers and footers","Include background graphics" etc in the print dialog box.</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/editor.js"></script>
 
 </body>
