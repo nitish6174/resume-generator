@@ -21,6 +21,7 @@
 
 				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">Usage</button>
 				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
+
 				<hr>
 
 				<h3 class="text-center">Template settings</h3>
@@ -62,8 +63,6 @@
 					</div>
 				</h5>
 				<br>
-				<!-- <hr> -->
-
 				
 				<div id="customTemplateOptions">
 					<h5>
@@ -146,6 +145,28 @@
 						</div>
 					</h5>
 				</div>
+
+				<hr>
+
+				<h3 class="text-center">Lists and points</h3>
+				<button class="btn btn-block btn-xs btn-success" onclick="insertOL();">+ Insert Numbered list</button>
+				<button class="btn btn-block btn-xs btn-success" onclick="insertUL();">+ Insert Bulleted list</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="decreaseIndent();">&lt;&lt; Decrese indentation</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="increaseIndent();">&gt;&gt; Increase indentation</button>
+				<h5>
+					List style :
+					<div class="toggle-button">
+						<div class="custom-button" data-toggle="list" id="list1">&#9899;</div>
+						<div class="custom-button" data-toggle="list" id="list2">&#9898;</div>
+						<div class="custom-button" data-toggle="list" id="list3">&#9632;</div>
+						<div class="custom-button" data-toggle="list" id="list4">-</div>
+						<div class="custom-button" data-toggle="list" id="list5">1.</div>
+						<div class="custom-button" data-toggle="list" id="list6">I.</div>
+						<div class="custom-button" data-toggle="list" id="list7">i.</div>
+						<div class="custom-button" data-toggle="list" id="list8">A.</div>
+						<div class="custom-button" data-toggle="list" id="list9">a.</div>
+					</div>
+				</h5>
 
 			</div>
 
@@ -420,15 +441,19 @@
 					</li>
 					<li>
 						<span class="title">Joint Entrance Examination 2014 : </span>
-						<span class="text">Secured 1st position in the National level contest.</span>
+						<span class="text">Secured All India Rank 1 among 0.15 million candidates appearing for the test.</span>
 					</li>
 					<li>
 						<span class="title">KVPY 2013-14 : </span>
-						<span class="text">Secured 1st position in the National level contest.</span>
+						<span class="text">Obtained the National research fellowship scholarship by securing a position in top 1%.</span>
 					</li>
 					<li>
 						<span class="title">ABC Olympiad 2014 : </span>
-						<span class="text">Secured 1st position in the National level contest.</span>
+						<span class="text">Qualified for the international stage by securing top position in following stages :</span>
+						<ol style="padding-left: 15px;">
+							<li>Qualifiers stage : Bagged 20th position among 5000 candidates.</li>
+							<li>National level : Bagged 7th position among 250 candidates.</li>
+						</ol>
 					</li>
 					</ul>
 				</div>
@@ -513,20 +538,21 @@
 
 			<div class="modal-body">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4>Editing content</h4>
+				<h4><strong>Editing content</strong></h4>
 				<ul>
 					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
 					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method.</li>
+					<li>Thus, to remove a section/point/date/link etc, just delete it.</li>
 					<li>To insert bold/italics/formatted text, copy a part of already existing formatted text to where you want and edit it. (Just like we can do in text editors)</li>
 				</ul>
-				<h4>Editing template</h4>
+				<h4><strong>Editing template</strong></h4>
 				<ul>
-					<li>Use the options in the left panel to modify the template</li>
+					<li>Use the options in the left panel to modify the template.</li>
 					<li>In case you want to use a different template than the official IITG template, choose the corresponding button to see other setting options. (For on-campus purpose, you must use official IITG template)</li>
 				</ul>
-				<h4>Saving as PDF</h4>
+				<h4><strong>Saving as PDF</strong></h4>
 				<ul>
-					<li><strong>Note : </strong>Use Google Chrome to print as PDF. (Other browsers are unable to print properly)</li>
+					<li><strong>Note : </strong>Use <strong>Google Chrome</strong> to print as PDF. (Other browsers are unable to print properly)</li>
 					<li>Adjust margin in the print dialog box. You may need it if a section is getting split between two pages. Print each page separately with different margins if needed.</li>
 					<li>If URLs or some stray text is being shown in print preview, disable the options "Include headers and footers","Include background graphics" etc in the print dialog box.</li>
 				</ul>

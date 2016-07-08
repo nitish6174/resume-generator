@@ -92,6 +92,18 @@ body {
 	/* background-color: #5cb85c; */
 	background-color: #E74C3C;
 }
+.custom-button {
+	display: inline-block;
+	padding: 3px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+.custom-button {
+	background-color: #222;
+}
+.custom-button.selected {
+	background-color: #E74C3C;
+}
 
 
 
@@ -117,6 +129,7 @@ body {
 a {
 	color: #666;
 }
+
 ul {
 	margin-left: 20px;
 	padding-left: 20px;
@@ -127,6 +140,28 @@ li {
 ul.nobullet {
 	list-style: none;
 }
+ul.disc {
+	list-style: disc;
+}
+ul.circle {
+	list-style: circle;
+}
+ul.square {
+	list-style: square;
+}
+ul.dash {
+	list-style: none;
+	padding-left: 5px;
+}
+ul.dash li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+ul.dash li:before {
+	content: "-";
+	padding-right: 5px;
+}
+
 .star {
 	margin-top: 5px;
 }
@@ -149,6 +184,9 @@ ul.nobullet {
 }
 .tab {
 	margin-left: 10px;
+}
+.btn:focus {
+	outline: 0px;
 }
 
 
