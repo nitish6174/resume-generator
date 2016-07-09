@@ -115,12 +115,14 @@ function changeTemplate(toggleType,toggleValue)
 			break;
 
 		case 'font':
-			if(toggleValue=='fontDroid')
-				$('#page').removeClass('verdana').removeClass('roboto').addClass('droid');
-			else if(toggleValue=='fontVerdana')
-				$('#page').removeClass('droid').removeClass('roboto').addClass('verdana');
+			if(toggleValue=='fontVerdanaSans')
+				$('#page').removeClass('droid').removeClass('roboto').removeClass('verdana-serif').addClass('verdana-sans');
+			else if(toggleValue=='fontVerdanaSerif')
+				$('#page').removeClass('verdana-sans').removeClass('droid').removeClass('roboto').addClass('verdana-serif');
 			else if(toggleValue=='fontRoboto')
-				$('#page').removeClass('verdana').removeClass('droid').addClass('roboto');
+				$('#page').removeClass('verdana-serif').removeClass('verdana-sans').removeClass('droid').addClass('roboto');
+			else if(toggleValue=='fontDroid')
+				$('#page').removeClass('roboto').removeClass('verdana-serif').removeClass('verdana-sans').addClass('droid');
 			break;
 		case 'case':
 			if(toggleValue=='caseNormal')

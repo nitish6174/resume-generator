@@ -349,22 +349,25 @@ td.header {
 
 
 
-#page.verdana * {
-	font-family: "Verdana", serif;
+#page.verdana-sans * {
+	font-family: "Verdana", sans-serif;
 }
-#page.droid * {
-	font-family: 'Droid Serif', serif;
+#page.verdana-serif * {
+	font-family: "Verdana", serif;
 }
 #page.roboto * {
 	font-family: 'Roboto', sans-serif;
 }
-.droid strong {
+#page.droid * {
+	font-family: 'Droid Serif', serif;
+}
+.droid strong , .verdana-sans strong , .verdana-serif strong {
 	font-weight: 700;
 }
 .roboto strong {
 	font-weight: 500;
 }
-.droid .title {
+.droid .title , .verdana-sans .title , .verdana-serif .title {
 	font-weight: 700;
 }
 .roboto .title {
