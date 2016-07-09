@@ -149,22 +149,21 @@
 				<hr>
 
 				<h3 class="text-center">Lists and points</h3>
-				<button class="btn btn-block btn-xs btn-success" onclick="insertOL();">+ Insert Numbered list</button>
-				<button class="btn btn-block btn-xs btn-success" onclick="insertUL();">+ Insert Bulleted list</button>
+				<button class="btn btn-block btn-xs btn-success" onclick="insertList();">+ Insert sub-list</button>
 				<button class="btn btn-block btn-xs btn-warning" onclick="decreaseIndent();">&lt;&lt; Decrese indentation</button>
 				<button class="btn btn-block btn-xs btn-warning" onclick="increaseIndent();">&gt;&gt; Increase indentation</button>
 				<h5>
 					List style :
 					<div class="toggle-button">
-						<div class="custom-button" data-toggle="list" id="list1">&#9899;</div>
-						<div class="custom-button" data-toggle="list" id="list2">&#9898;</div>
-						<div class="custom-button" data-toggle="list" id="list3">&#9632;</div>
-						<div class="custom-button" data-toggle="list" id="list4">-</div>
-						<div class="custom-button" data-toggle="list" id="list5">1.</div>
-						<div class="custom-button" data-toggle="list" id="list6">I.</div>
-						<div class="custom-button" data-toggle="list" id="list7">i.</div>
-						<div class="custom-button" data-toggle="list" id="list8">A.</div>
-						<div class="custom-button" data-toggle="list" id="list9">a.</div>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('disc');">&#9899;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('circle');">&#9898;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('square');">&#9632;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('dash');">-</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('decimal');">1.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('upper-roman');">I.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('lower-roman');">i.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('upper-alpha');">A.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('lower-alpha');">a.</button>
 					</div>
 				</h5>
 
@@ -450,10 +449,10 @@
 					<li>
 						<span class="title">ABC Olympiad 2014 : </span>
 						<span class="text">Qualified for the international stage by securing top position in following stages :</span>
-						<ol style="padding-left: 15px;">
+						<ul class="decimal">
 							<li>Qualifiers stage : Bagged 20th position among 5000 candidates.</li>
 							<li>National level : Bagged 7th position among 250 candidates.</li>
-						</ol>
+						</ul>
 					</li>
 					</ul>
 				</div>
@@ -542,8 +541,10 @@
 				<ul>
 					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
 					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method.</li>
-					<li>Thus, to remove a section/point/date/link etc, just delete it.</li>
+					<li>Thus, to remove a section/point/mentor/link etc, just delete it.</li>
 					<li>To insert bold/italics/formatted text, copy a part of already existing formatted text to where you want and edit it. (Just like we can do in text editors)</li>
+					<li>Use "Insert sub-list" button to insert sub-points in a point. (like as in achivements section)</li>
+					<li>Change indentation and bullet style of the list where your cursor is placed.</li>
 				</ul>
 				<h4><strong>Editing template</strong></h4>
 				<ul>
