@@ -14,6 +14,12 @@ defaultTemplateVars = [ "fontDroid" , "caseNormal" , "titleRuled" , "ruleAbove" 
 for(i=0;i<defaultTemplateVars.length;i++)
 	$('#'+defaultTemplateVars[i]).addClass('selected');
 
+$('input[name="sectionToggle"]').attr('checked',true);
+
+
+
+
+
 
 $('.toggle-option').click(function(){
 	toggleType = $(this).attr('data-toggle');
@@ -37,6 +43,10 @@ $('.toggle-option').click(function(){
 	}
 });
 
+$('input[name="sectionToggle"]').change(function(){
+	toggleSection($(this).val(),$(this).is(':checked'));
+});
+
 
 function template(value)
 {
@@ -54,6 +64,11 @@ function template(value)
 		$('#defaultTemplateBtn').removeClass('btn-danger').addClass('btn-default');
 		$('#customTemplateOptions').show();
 	}
+}
+
+function toggleSection(sectionName,toggleState)
+{
+	$('#'+sectionName).toggle();
 }
 
 function changeTemplate(toggleType,toggleValue)

@@ -62,6 +62,9 @@
 						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
 					</div>
 				</h5>
+				<h5>
+					<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
+				</h5>
 				<br>
 				
 				<div id="customTemplateOptions">
@@ -201,7 +204,7 @@
 				</div>
 
 			
-				<div class="section">
+				<div class="section" id="sectionEducation">
 					<div class="section-title">
 						<hr class="hr-above">
 						<h4><strong>Education</strong></h4>
@@ -560,6 +563,25 @@
 				</ul>
 			</div>
 
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sectionToggleModal" tabindex='-1'>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionEducation">Education</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionExperience">Experience</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionPublications">Publications</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionProjects">Projects</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionSkills">Technical Skills</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionResponsibility">Positions of Responsibility</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionAchievements">Achievements</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionCurricular">Extra curriculars</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionCourses">Key courses taken</label></div>
+			</div>
 		</div>
 	</div>
 </div>
