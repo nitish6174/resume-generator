@@ -286,20 +286,20 @@ td.header {
 	background-color: #ccc !important;
 }
 
-.section-title.ruled.rule-above hr.hr-above { 
-	border: 0.5px solid hsl(0,0%,40%);
+.section-title.ruled.rule-above hr.hr-above {
+	border: 1px solid hsl(0,0%,40%);
 	margin-top: 0px; margin-bottom: 0px;
 }
-.section-title.ruled.rule-above hr.hr-below { 
+.section-title.ruled.rule-above hr.hr-below {
 	border: none;
 	margin: 0px;
 }
-.section-title.ruled.rule-below hr.hr-above { 
+.section-title.ruled.rule-below hr.hr-above {
 	border: none;
 	margin: 0px;
 }
-.section-title.ruled.rule-below hr.hr-below { 
-	border: 0.5px solid hsl(0,0%,40%);
+.section-title.ruled.rule-below hr.hr-below {
+	border: 1px solid hsl(0,0%,40%);
 	margin-top: 2px; margin-bottom: 5px;
 }
 .section-title.shaded hr { 

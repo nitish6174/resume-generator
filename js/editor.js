@@ -1,26 +1,6 @@
 document.querySelector('#page').contentEditable = true;
 
 
-
-$('#page').addClass('droid');
-$('.section-title').addClass('ruled');
-$('.section-title').addClass('rule-above');
-
-$('#minorHide').addClass('selected');
-$('#contact4').addClass('selected');
-$('#margin4').addClass('selected');
-
-defaultTemplateVars = [ "fontDroid" , "caseNormal" , "titleRuled" , "ruleAbove" , "imageShow" , "rollShow" , "course1" , "tableShow" , "edyearFirst" , "experience1" , "projects1" ];
-for(i=0;i<defaultTemplateVars.length;i++)
-	$('#'+defaultTemplateVars[i]).addClass('selected');
-
-$('input[name="sectionToggle"]').attr('checked',true);
-
-
-
-
-
-
 $('.toggle-option').click(function(){
 	toggleType = $(this).attr('data-toggle');
 	toggleValue = $(this).attr('id');
@@ -68,6 +48,10 @@ function template(value)
 
 function toggleSection(sectionName,toggleState)
 {
+	if(toggleState==true)
+		$('input[value="'+sectionName+'"]').attr('checked','true');
+	else
+		$('input[value="'+sectionName+'"]').removeAttr('checked');
 	$('#'+sectionName).toggle();
 }
 
