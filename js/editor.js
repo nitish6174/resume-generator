@@ -102,6 +102,20 @@ function changeTemplate(toggleType,toggleValue)
 			else if(toggleValue=='margin6')
 				$('#page').css('padding','0.2cm 1.5cm 1cm 1.5cm');
 			break;
+		case 'line':
+			if(toggleValue=='line1')
+				$('#page').css('line-height','1.1em');
+			else if(toggleValue=='line2')
+				$('#page').css('line-height','1.2em');
+			else if(toggleValue=='line3')
+				$('#page').css('line-height','1.3em');
+			else if(toggleValue=='line4')
+				$('#page').css('line-height','1.4em');
+			else if(toggleValue=='line5')
+				$('#page').css('line-height','1.5em');
+			else if(toggleValue=='line6')
+				$('#page').css('line-height','1.6em');
+			break;
 		case 'column':
 			if(toggleValue=='column1')
 				$('.table tbody tr td:nth-child(1)').toggleClass('text-center');

@@ -3,6 +3,8 @@
 <head>
 	<title>Resume generator</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/scroll.css">
+	<link rel="stylesheet" type="text/css" href="css/theme.css">
 	<link rel="stylesheet" type="text/css" href="css/editor.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
@@ -19,7 +21,7 @@
 
 			<div id="panel">
 
-				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">Usage</button>
+				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">VIEW INSTRUCTIONS</button>
 				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
 
 				<hr>
@@ -54,6 +56,17 @@
 					</div>
 				</h5>
 				<h5>
+					Line spacing
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="line" id="line1">1</div>
+						<div class="toggle-option" data-toggle="line" id="line2">2</div>
+						<div class="toggle-option" data-toggle="line" id="line3">3</div>
+						<div class="toggle-option selected" data-toggle="line" id="line4">4</div>
+						<div class="toggle-option" data-toggle="line" id="line5">5</div>
+						<div class="toggle-option" data-toggle="line" id="line6">6</div>
+					</div>
+				</h5>
+				<h5>
 					Center column no.
 					<div class="toggle-button">
 						<div class="toggle-option multi-select" data-toggle="column" id="column1">1</div>
@@ -62,9 +75,7 @@
 						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
 					</div>
 				</h5>
-				<h5>
-					<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
-				</h5>
+				
 				<br>
 				
 				<div id="customTemplateOptions">
@@ -148,7 +159,12 @@
 							<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
 						</div>
 					</h5>
+					<br>
 				</div>
+
+				<h5>
+					<button class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
+				</h5>
 
 				<hr>
 
@@ -544,20 +560,20 @@
 				<h4><strong>Editing content</strong></h4>
 				<ul>
 					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
-					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method.</li>
-					<li>Thus, to remove a section/point/mentor/link etc, just delete it.</li>
-					<li>To insert bold/italics/formatted text, copy a part of already existing formatted text to where you want and edit it. (Just like we can do in text editors)</li>
+					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method. (Use "show/hide sections" button to hide but retain content)</li>
+					<li>To remove a section/point/mentor/link etc, just delete it.</li>
+					<li>For styled/formatted text, select the text portion and press <kbd>Ctrl+b</kbd> for bold, <kbd>Ctrl+i</kbd> for italics, <kbd>Ctrl+u</kbd> for underlined text.</li>
 					<li>Use "Insert sub-list" button to insert sub-points in a point. (like as in achivements section)</li>
 					<li>Change indentation and bullet style of the list where your cursor is placed.</li>
 				</ul>
 				<h4><strong>Editing template</strong></h4>
 				<ul>
-					<li>Use the options in the left panel to modify the template.</li>
+					<li>Use the options in the left panel to modify the template/look.</li>
 					<li>In case you want to use a different template than the official IITG template, choose the corresponding button to see other setting options. (For on-campus purpose, you must use official IITG template)</li>
 				</ul>
 				<h4><strong>Saving</strong></h4>
 				<ul>
-					<li>Close any popup box if opened. Press Ctrl+s.</li>
+					<li>Close any popup box (like this instructions popup	) if opened. Press <kbd>Ctrl+s</kbd></li>
 					<li>This will save the webpage (a .html file and a folder will be saved. Keep them together)</li>
 					<li>Open the .html file in browser from your PC.</li>
 					<li>This way, you can maintain multiple saved copies for each profile/template on your PC.</li>
