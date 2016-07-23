@@ -196,12 +196,12 @@ function changeTemplate(toggleType,toggleValue)
 			if(toggleValue=='course1')
 			{
 				$('#contentBranch').hide();
-				$('#contentCourse').text('Branch - XXX Engineering');
+				$('#contentCourse').text('B.Tech - '+$('#contentBranch').text());
 			}
 			else
 			{
 				$('#contentBranch').show();
-				$('#contentCourse').text('Branch undergraduate');
+				$('#contentCourse').text('B.Tech undergraduate');
 			}
 			break;
 		case 'table':
