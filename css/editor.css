@@ -219,6 +219,9 @@ td.header {
 #sectionInterest {
 	display: none;
 }
+#sectionFooterMessage {
+	display: none;
+}
 
 
 
