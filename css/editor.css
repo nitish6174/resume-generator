@@ -60,6 +60,16 @@ body {
 a {
 	color: #666;
 }
+a.blue {
+	color: blue;
+	text-decoration: none;
+	border-bottom: 1px dotted blue;
+}
+a.blue:hover {
+	color: blue;
+	text-decoration: none;
+	border-bottom: 1px solid blue;
+}
 
 ul {
 	margin-left: 20px;
