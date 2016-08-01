@@ -78,6 +78,9 @@ ul {
 li {
 	margin-top: 1%;
 }
+li li {
+	margin-top: 0.25%;
+}
 
 
 
@@ -131,7 +134,7 @@ li {
 .table tbody tr td, .table tbody tr th, .table thead tr th {
 	border: none;
 	padding: 0;
-	font-size: 13.71px;
+	font-size: 13.5px;
 }
 td {
 	color: #444;
@@ -193,7 +196,7 @@ td.header {
 
 .text {
 	color: #444;
-	font-size: 0.98em;
+	font-size: 13.5px;
 }
 .time {
 	color: #333;
@@ -211,6 +214,11 @@ td.header {
 	font-style: italic;
 	margin-right: 1px;
 }
+
+.no-link .link {
+	display: none;
+}
+
 #sectionProjects .mentor , #sectionProjects .link {
 	display: inline-block;
 }
