@@ -5,7 +5,7 @@ function saveData() {
 }
 
 function loadData() {
-	var data = sessionStorage.getItem("page_html");
+	var data = localStorage.getItem("page_html");
 	if(data) {
 		console.log("saved data found. loading data.");
 		$('body').html(JSON.parse(data));
