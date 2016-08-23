@@ -1,6 +1,6 @@
 function saveData() {
 	var data = $('body').html();
-	localStorage..setItem("page_html",JSON.stringify(data));
+	localStorage.setItem("page_html",JSON.stringify(data));
 }
 
 function loadData() {
