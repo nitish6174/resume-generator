@@ -1,3 +1,23 @@
+function saveData() {
+	var data = $('body').html();
+	localStorage..setItem("page_html",JSON.stringify(data));
+}
+
+function loadData() {
+	var data = sessionStorage.getItem("page_html");
+	if(data)
+		$('body').html(data);
+}
+
+window.onload = function() {
+	loadData();
+};
+
+$('body').change(function() {
+	console.log("saving data");
+	saveData();
+});
+
 document.querySelector('#page').contentEditable = true;
 
 defaultTemplateVars = [ "fontDroid" , "caseNormal" , "titleRuled" , "ruleAbove" , "imageShow" , "rollShow" , "course1" , "tableShow" , "edyearFirst" , "experience1" , "projects1" ]
