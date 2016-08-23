@@ -368,7 +368,7 @@ window.onload = function() {
 };
 
 
-var items = documen.getElementsByTagName("*");
+var items = document.getElementsByTagName("*");
 for(var i = 0; i < items.length; i++) {
 	items[i].onchange = function() {
 		console.log("saving data");
