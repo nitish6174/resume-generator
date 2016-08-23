@@ -1,12 +1,15 @@
 function saveData() {
+	console.log("saving data.");
 	var data = $('body').html();
 	localStorage.setItem("page_html",JSON.stringify(data));
 }
 
 function loadData() {
 	var data = sessionStorage.getItem("page_html");
-	if(data)
-		$('body').html(data);
+	if(data) {
+		console.log("saved data found. loading data.");
+		$('body').html(JSON.parse(data));
+	}
 }
 
 document.querySelector('#page').contentEditable = true;
@@ -364,14 +367,5 @@ function insertAfter(referenceNode,newNode) {
 
 window.onload = function() {
 	loadData();
-	console.log("loaded data");
+	//console.log("loaded data");
 };
-
-
-var items = document.getElementsByTagName("*");
-for(var i = 0; i < items.length; i++) {
-	items[i].onchange = function() {
-		console.log("saving data");
-		saveDate();
-	};
-}
