@@ -267,3 +267,15 @@ td.header {
 .roboto .title {
 	font-weight: 500;
 }
+
+#notice {
+	background-color: #C0392B;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: white;
+	text-align: center;
+}
+#notice a {
+	color: #F1C40F;
+}
