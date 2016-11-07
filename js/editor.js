@@ -1,3 +1,17 @@
+function saveData() {
+	console.log("saving data.");
+	var data = $('body').html();
+	localStorage.setItem("page_html",JSON.stringify(data));
+}
+
+function loadData() {
+	var data = localStorage.getItem("page_html");
+	if(data) {
+		console.log("saved data found. loading data.");
+		$('body').html(JSON.parse(data));
+	}
+}
+
 document.querySelector('#page').contentEditable = true;
 
 defaultTemplateVars = [ "fontDroid" , "caseNormal" , "titleRuled" , "ruleAbove" , "imageShow" , "rollShow" , "course1" , "tableShow" , "edyearFirst" , "experience1" , "projects1" ]
@@ -350,3 +364,8 @@ function getSelectionContainerElement()
 function insertAfter(referenceNode,newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
+
+window.onload = function() {
+	loadData();
+	//console.log("loaded data");
+};
