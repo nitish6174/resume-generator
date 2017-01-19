@@ -30,6 +30,9 @@ body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+#titleBox * {
+	font-size: 2em;
+}
 #customTemplateOptions {
 	display: none;
 }

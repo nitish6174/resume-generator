@@ -56,6 +56,9 @@ ul.lower-alpha {
 }
 
 
+.corner {
+	border-radius: 0px;
+}
 
 .toggle-button {
 	display: inline-block;
@@ -96,14 +99,20 @@ ul.lower-alpha {
 
 
 
-.btn:focus {
-	outline: 0px;
+.btn-group {
+	display: inline-block;
+	padding: 3px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	cursor: pointer;
+	border-radius: 2px;
 }
 
-
-
-.dot {
-	border-bottom: 1px dotted #333;
+.btn-violet {
+	background-color: #8E44AD;
+}
+.btn-teal {
+	background-color: #16a085;
 }
 
 
